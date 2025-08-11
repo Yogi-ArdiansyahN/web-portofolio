@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@theme {
+  --color-dark: #18181b;
+  --color-white: #FAFDFB;
+}
+
+@layer base {
+  body {
+    font-family: "Montserrat Alternates", sans-serif;
+    @apply bg-white text-dark; /* default light mode */
+  }
+
+  .dark {
+    @apply bg-dark text-white;
+  }
+}
