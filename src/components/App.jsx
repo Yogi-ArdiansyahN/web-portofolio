@@ -11,9 +11,11 @@ export default function App() {
 
 function Navbar() {
     return (
-      <nav className="mt-5">
+      <>
+      <nav className="pt-2 md:pt-5  ">
         <div className="text-lg font-bold text-center">YOGIAN</div>
-        <div className="max-w-screen-xl mx-auto px-4 py-3 flex justify-center items-center">
+        </nav>
+       <div className="sticky bg-dark max-w-screen-xl mx-auto px-4 py-3 flex justify-center items-center">
           <ul className="flex gap-6 font-medium">
             <li>
               <button
@@ -47,7 +49,8 @@ function Navbar() {
             </li> */}
           </ul>
         </div>
-      </nav>
+      </>
+      
     )
 }
 
