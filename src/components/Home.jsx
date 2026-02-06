@@ -55,7 +55,7 @@ export default function Home() {
               </div>
               <div className="mt-5 md:mt-0">
                 <p className="font-bold text-xl mb-3">
-                  Pencapain dan Tanggung Jawab :
+                  Tugas dan Tanggung Jawab :
                 </p>
                 <ol className="list-decimal text-balance pl-3.5">
                   <li className="mb-3">
@@ -106,22 +106,22 @@ export default function Home() {
                   className="font-bold text-balance"
                   style={{ color: "#777" }}
                 >
-                  webstore top up
+                  Web Top Up (<a href="https://ghstore.store">ghstore.store</a>)
                 </h4>
                 <span
                   className="font-semibold text-balance"
                   style={{ color: "#777" }}
                 >
-                  2025 - Sekarang
+                  Okt 2025 - Sekarang
                 </span>
               </div>
               <div className="mt-5 md:mt-0">
                 <p className="font-bold text-xl mb-3">
-                  Pencapain dan Tanggung Jawab :
+                  Tugas dan Tanggung Jawab :
                 </p>
                 <ol className="list-decimal text-balance pl-3.5">
                   <li className="mb-3">
-                    Mengembangkan webstore menggunakan CodeIgniter 4, mencakup
+                    Mengembangkan web top up menggunakan CodeIgniter 4, mencakup
                     komponen backend dan frontend.
                   </li>
                   <li className="mb-3">
@@ -131,30 +131,30 @@ export default function Home() {
                         <span className="font-bold border-b-1 border-white mr-1">
                           Fitur Voucher
                         </span>
-                        untuk kebutuhan promosi webstore
+                        untuk kebutuhan promosi web top up
                       </li>
                       <li className="list-disc ml-3.5">
                         <span className="font-bold border-b-1 border-white mr-1">
                           Fitur QRIS Statis
                         </span>
-                        untuk memenuhi kebutuhan pemilik webstore dalam
-                        penjualan product yang ada maupun tidak ada pada
-                        webstore
+                        untuk memenuhi kebutuhan pemilik web top up dalam
+                        penjualan product yang ada maupun tidak ada pada web top
+                        up
                       </li>
                       <li className="list-disc ml-3.5">
                         <span className="font-bold border-b-1 border-white mr-1">
-                          Sistem payment saldo webstore
+                          Sistem payment saldo web top up
                         </span>
                         Memperbaiki bug yang ada dan menambah flow baru , dan
                         mengubah UI serta flow panel user yang sesuai dengan
-                        yang diinginkan pemilik webstore
+                        yang diinginkan pemilik web top up
                       </li>
                       <li className="list-disc ml-3.5">
                         <span className="font-bold border-b-1 border-white mr-1">
                           Fitur Mutasi
                         </span>
-                        Membuat fitur mutasi untuk mempermudah admin webstore
-                        dalam tracking order dengan payment saldo webstore
+                        Membuat fitur mutasi untuk mempermudah admin web top up
+                        dalam tracking order dengan payment saldo web top up
                       </li>
                     </ol>
                   </li>
@@ -166,8 +166,8 @@ export default function Home() {
                           Side Project Web Store (h2h)
                         </span>
                         Membangun project penjualan dengan konsep host to host,
-                        dikhusus kan untuk pemilik webstore berbasis web maupun
-                        chat bot. Dibangun dengan backend NestJS dan frontend
+                        dikhusus kan untuk reseller berbasis web maupun chat
+                        bot. Dibangun dengan backend NestJS dan frontend
                         SvelteJS
                       </li>
                     </ol>
