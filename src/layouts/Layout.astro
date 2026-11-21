@@ -3,6 +3,11 @@ import "../styles/global.css";
 import { copy } from "../i18n.js";
 
 const initial = copy.en;
+const {
+  title = initial.home.documentTitle,
+  description = initial.home.description,
+  ogLocale = initial.ogLocale,
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -10,8 +15,8 @@ const initial = copy.en;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{initial.documentTitle}</title>
-    <meta name="description" content={initial.description} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
     <meta name="theme-color" content="#0B0B0B" />
     <script is:inline>
       (() => {
@@ -30,12 +35,12 @@ const initial = copy.en;
       })();
     </script>
     <meta property="og:type" content="website" />
-    <meta property="og:locale" content={initial.ogLocale} />
-    <meta property="og:title" content={initial.documentTitle} />
-    <meta property="og:description" content={initial.description} />
+    <meta property="og:locale" content={ogLocale} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content={initial.documentTitle} />
-    <meta name="twitter:description" content={initial.description} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   </head>
   <body class="min-h-screen bg-canvas text-ink">

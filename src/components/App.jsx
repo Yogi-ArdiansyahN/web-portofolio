@@ -7,39 +7,21 @@ const STORAGE_KEY = "portfolio-language";
 const THEME_STORAGE_KEY = "portfolio-theme";
 
 const pages = [
-  { id: "home", labelKey: "home" },
-  { id: "project", labelKey: "project" },
+  { id: "home", labelKey: "home", href: "/" },
+  { id: "project", labelKey: "project", href: "/project" },
 ];
 
-function readLocation() {
-  const params = new URLSearchParams(window.location.search);
-  return { activePage: params.get("view") === "project" ? "project" : "home" };
-}
-
-export default function App({ entries }) {
-  const [activePage, setActivePage] = useState("home");
+export default function App({ entries, page, pathname }) {
   const [language, setLanguage] = useState("en");
   const [ready, setReady] = useState(false);
-  const [locationReady, setLocationReady] = useState(false);
   const [theme, setTheme] = useState("dark");
   const [themeReady, setThemeReady] = useState(false);
   const t = copy[language];
+  const pageCopy = page === "project" ? t.project : t.home;
+  const currentPath = pathname.replace(/\/$/, "") || "/";
   const nextLanguage = language === "id" ? "en" : "id";
   const nextTheme = theme === "dark" ? "light" : "dark";
   const themeLabel = theme === "dark" ? t.theme.switchToLight : t.theme.switchToDark;
-
-  useEffect(() => {
-    const current = readLocation();
-    setActivePage(current.activePage);
-    setLocationReady(true);
-
-    const onPopState = () => {
-      setActivePage(readLocation().activePage);
-    };
-
-    window.addEventListener("popstate", onPopState);
-    return () => window.removeEventListener("popstate", onPopState);
-  }, []);
 
   useEffect(() => {
     const saved = window.localStorage.getItem(STORAGE_KEY);
@@ -54,15 +36,15 @@ export default function App({ entries }) {
     };
 
     document.documentElement.lang = language;
-    document.title = t.documentTitle;
-    setContent('meta[name="description"]', t.description);
+    document.title = pageCopy.documentTitle;
+    setContent('meta[name="description"]', pageCopy.description);
     setContent('meta[property="og:locale"]', t.ogLocale);
-    setContent('meta[property="og:title"]', t.documentTitle);
-    setContent('meta[property="og:description"]', t.description);
-    setContent('meta[name="twitter:title"]', t.documentTitle);
-    setContent('meta[name="twitter:description"]', t.description);
+    setContent('meta[property="og:title"]', pageCopy.documentTitle);
+    setContent('meta[property="og:description"]', pageCopy.description);
+    setContent('meta[name="twitter:title"]', pageCopy.documentTitle);
+    setContent('meta[name="twitter:description"]', pageCopy.description);
     window.localStorage.setItem(STORAGE_KEY, language);
-  }, [language, ready, t]);
+  }, [language, ready, pageCopy, t.ogLocale]);
 
   useEffect(() => {
     const initial = document.documentElement.dataset.theme === "dark" ? "dark" : "light";
@@ -79,56 +61,33 @@ export default function App({ entries }) {
     window.localStorage.setItem(THEME_STORAGE_KEY, theme);
   }, [theme, themeReady]);
 
-  useEffect(() => {
-    if (!locationReady) return;
-    const params = new URLSearchParams(window.location.search);
-
-    if (activePage === "project") {
-      params.set("view", "project");
-    } else {
-      params.delete("view");
-    }
-    params.delete("filter");
-
-    const search = params.toString();
-    const next = `${window.location.pathname}${search ? `?${search}` : ""}${window.location.hash}`;
-    const current = `${window.location.pathname}${window.location.search}${window.location.hash}`;
-    if (current !== next) window.history.pushState(null, "", next);
-  }, [activePage, locationReady]);
-
-  const navigate = (page) => {
-    setActivePage(page);
-  };
-
   return (
     <div className="min-h-screen">
       <header className="sticky top-0 z-30 border-b border-ink/20 bg-canvas">
         <div className="mx-auto flex w-full max-w-screen-lg flex-wrap items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8">
-          <button
-            type="button"
-            onClick={() => navigate("home")}
-            className="min-h-11 text-left text-lg font-extrabold tracking-tight text-ink"
+          <a
+            href="/"
+            className="inline-flex min-h-11 items-center text-left text-lg font-extrabold tracking-tight text-ink"
           >
             YOGIAN
-          </button>
+          </a>
           <div className="flex w-full items-center gap-2 sm:w-auto">
             <nav aria-label={t.nav.mainLabel} className="grid min-w-0 flex-1 grid-cols-2 gap-1 sm:flex sm:flex-none">
-              {pages.map((page) => {
-                const active = activePage === page.id;
+              {pages.map((item) => {
+                const active = currentPath === item.href;
                 return (
-                  <button
-                    key={page.id}
-                    type="button"
+                  <a
+                    key={item.id}
+                    href={item.href}
                     aria-current={active ? "page" : undefined}
-                    onClick={() => navigate(page.id)}
-                    className={`min-h-11 rounded-sm px-3 text-sm font-semibold transition-colors ${
+                    className={`inline-flex min-h-11 items-center rounded-sm px-3 text-sm font-semibold transition-colors ${
                       active
                         ? "bg-ink text-canvas"
                         : "text-muted hover:bg-surface hover:text-ink"
                     }`}
                   >
-                    {t.nav[page.labelKey]}
-                  </button>
+                    {t.nav[item.labelKey]}
+                  </a>
                 );
               })}
             </nav>
@@ -210,11 +169,12 @@ export default function App({ entries }) {
       </header>
 
       <div id="app" className="px-0 pb-4 pt-10 sm:pt-12">
-        <div className={`view-panel ${activePage === "home" ? "" : "screen-hidden"}`}>
-          <Home entries={entries} language={language} t={t} />
-        </div>
-        <div className={`view-panel ${activePage === "project" ? "" : "screen-hidden"}`}>
-          <Project entries={entries} language={language} t={t} />
+        <div className="view-panel">
+          {page === "project" ? (
+            <Project entries={entries} language={language} t={t} />
+          ) : (
+            <Home entries={entries} language={language} t={t} />
+          )}
         </div>
       </div>
     </div>

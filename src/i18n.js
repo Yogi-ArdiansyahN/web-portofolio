@@ -1,8 +1,5 @@
 export const copy = {
   id: {
-    documentTitle: "Yogi Ardiansyah Nugraha | Portofolio",
-    description:
-      "Portofolio Yogi Ardiansyah Nugraha: pengalaman, pendidikan, teknologi, dan kontribusi project dalam bahasa Indonesia.",
     ogLocale: "id_ID",
     nav: {
       mainLabel: "Navigasi utama",
@@ -17,6 +14,9 @@ export const copy = {
       switchToLight: "Ganti ke light mode",
     },
     home: {
+      documentTitle: "Yogi Ardiansyah Nugraha | Portofolio",
+      description:
+        "Portofolio Yogi Ardiansyah Nugraha: pengalaman, pendidikan, teknologi, dan kontribusi project dalam bahasa Indonesia.",
       intro:
         "Developer web dengan latar belakang RPL dan Teknik Informatika. Saya mengerjakan API, interfaces, dan integrations untuk sistem operasional, transaksi, dan layanan kesehatan. Stack berbeda tiap project, termasuk Laravel, PHP, React, dan TypeScript.",
       contactLabel: "Informasi kontak",
@@ -27,6 +27,9 @@ export const copy = {
       stackCopy: "Teknologi yang dipakai pada projects di bawah ini.",
     },
     project: {
+      documentTitle: "Kontribusi Project | Yogi Ardiansyah Nugraha",
+      description:
+        "Kontribusi, alur kerja, dan detail teknis project pada portofolio Yogi Ardiansyah Nugraha.",
       heading: "Kontribusi Project",
       noteHighlight: "Judul project di sini sengaja digeneralisasi",
       noteRest:
@@ -37,9 +40,6 @@ export const copy = {
     },
   },
   en: {
-    documentTitle: "Yogi Ardiansyah Nugraha | Portfolio",
-    description:
-      "Yogi Ardiansyah Nugraha's portfolio: experience, education, tech stack, and project contributions in English.",
     ogLocale: "en_US",
     nav: {
       mainLabel: "Main navigation",
@@ -54,6 +54,9 @@ export const copy = {
       switchToLight: "Switch to light mode",
     },
     home: {
+      documentTitle: "Yogi Ardiansyah Nugraha | Portfolio",
+      description:
+        "Yogi Ardiansyah Nugraha's portfolio: experience, education, tech stack, and project contributions in English.",
       intro:
         "Software developer with a background in software engineering and informatics engineering. I work on APIs, interfaces, and integrations for operational, transaction, and healthcare systems. The stack changes per project, including Laravel, PHP, React, and TypeScript.",
       contactLabel: "Contact information",
@@ -64,6 +67,9 @@ export const copy = {
       stackCopy: "Technologies used in the projects below.",
     },
     project: {
+      documentTitle: "Project Contributions | Yogi Ardiansyah Nugraha",
+      description:
+        "Project contributions, workflows, and technical details from Yogi Ardiansyah Nugraha's portfolio.",
       heading: "Project Contributions",
       noteHighlight: "Project titles here are intentionally generalized",
       noteRest:

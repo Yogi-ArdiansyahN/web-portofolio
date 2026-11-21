@@ -275,12 +275,6 @@ summary {
   }
 }
 
-@media screen {
-  .screen-hidden {
-    display: none !important;
-  }
-}
-
 @page {
   margin: 14mm;
 }
