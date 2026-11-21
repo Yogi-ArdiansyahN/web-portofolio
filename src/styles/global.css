@@ -235,7 +235,8 @@ summary {
   .journey-wrap { margin-top: 40px; }
   .journey-road { display: none; }
 
-  .journey-roadmap {
+  .journey-roadmap,
+  .journey-wrap--three .journey-roadmap {
     grid-template-columns: 1fr;
     gap: 44px;
     padding-top: 0;
@@ -253,7 +254,8 @@ summary {
   }
 
   .journey-stop,
-  .journey-stop:nth-child(n) {
+  .journey-stop:nth-child(n),
+  .journey-wrap--three .journey-stop:nth-child(n) {
     display: grid;
     grid-template-columns: var(--journey-marker) minmax(0, 1fr);
     gap: 24px;
