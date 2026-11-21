@@ -9,24 +9,30 @@ platform: ["Web App"]
 tech_stack: ["PHP", "CodeIgniter 4", "JavaScript", "MySQL", "Bootstrap", "Git"]
 ---
 
-## Business Context
-A company profile site with an admin panel so content can be changed dynamically without editing code. The company can update its profile, services, and promotional materials on its own.
+## Overview
+Company profile site with an admin panel for dynamic content changes. The company can update its profile, services, and promotional material without editing code.
 
-## Role & System Flow
+## Problem
+The company needed to update profile, services, and promotional material without code edits.
+
+## My Contributions
 * Built company profile pages with content managed through the admin panel.
 * Connected interface components to MySQL so content changes appear on the site immediately.
 * Prepared the flow for managing text, images, and page structure in the CodeIgniter 4 backend.
 
-## Technical Notes
-The admin panel manages text, images, and page structure in MySQL, so content changes appear on the site immediately. I recorded display adjustments in Git.
+## Technical Highlights
+The admin panel stores text, images, and page structure in MySQL, so edits appear on the site without editing code.
 
-## Konteks Bisnis
-Situs profil perusahaan dengan panel admin agar konten dapat diubah secara dinamis tanpa mengedit kode. Perusahaan dapat memperbarui profil, layanan, dan materi promosinya sendiri.
+## Ringkasan
+Situs profil perusahaan dengan panel admin untuk perubahan konten secara dinamis. Perusahaan dapat memperbarui profil, layanan, dan materi promosi tanpa mengedit kode.
 
-## Peran & Alur Sistem
-* Membangun halaman profil perusahaan dengan konten yang dikelola melalui admin panel.
-* Menghubungkan interface components ke MySQL agar perubahan konten langsung muncul di situs.
-* Menyiapkan alur untuk mengelola teks, gambar, dan struktur halaman di backend CodeIgniter 4.
+## Masalah
+Perusahaan perlu memperbarui profil, layanan, dan materi promosi tanpa mengedit kode.
 
-## Highlight Teknis
-Admin panel mengelola teks, gambar, dan struktur halaman di MySQL agar perubahan konten langsung muncul di situs. Saya mencatat display adjustments di Git.
+## Kontribusi Saya
+* Membangun halaman profil perusahaan dengan konten yang dikelola melalui panel admin.
+* Menghubungkan komponen antarmuka ke MySQL agar perubahan konten langsung muncul di situs.
+* Menyiapkan alur pengelolaan teks, gambar, dan struktur halaman di backend CodeIgniter 4.
+
+## Sorotan Teknis
+Panel admin menyimpan teks, gambar, dan struktur halaman di MySQL, sehingga perubahan muncul di situs tanpa mengedit kode.

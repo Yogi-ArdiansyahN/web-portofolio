@@ -9,26 +9,30 @@ platform: ["Web App"]
 tech_stack: ["PHP", "Laravel", "Inertia.js", "React", "TypeScript", "Git"]
 ---
 
-## Business Context
-Replacing the old procedural PHP system with a platform for medical master data, pharmacy, and claims integration. The system covers processes from registration to reporting.
+## Overview
+Replaces an older procedural PHP system with a platform for medical master data, pharmacy, and claims integration. The system covers processes from registration to reporting.
 
-## Role & System Flow
-* Designed the generic master data registry and implemented validation for unique names, automatic codes, local messages, and restrictions on deleting data that is still in use.
-* Integrated the insurance claim flow through a read-only proxy with a feature flag, input validation, and forwarding of response metadata to the interface.
+## Problem
+New master data entities and claim integrations needed consistent validation without duplicating entity-specific code.
+
+## My Contributions
+* Designed the generic master data registry with unique name validation, automatic codes, localized messages, and restrictions on deleting records still in use.
+* Integrated the insurance claim flow through a read-only proxy with a feature flag, input validation, and response metadata forwarded to the interface.
 * Added feature tests to keep master data validation and the claim flow stable.
-* I used AI-assisted coding for component and test scaffolding, then reviewed the business flows manually.
 
-## Technical Notes
-The generic master data registry covers unique names, automatic codes, local messages, and delete restrictions for data still in use. New entities are added through configuration, and I reviewed the claim flow manually.
+## Technical Highlights
+New entities are added through configuration. The claim flow and business rules were reviewed directly during implementation.
 
-## Konteks Bisnis
-Mengganti sistem lama berbasis PHP prosedural dengan platform untuk data master medis, farmasi, dan claims integration. Sistem ini mencakup proses dari pendaftaran hingga pelaporan.
+## Ringkasan
+Mengganti sistem PHP prosedural lama dengan platform untuk data master medis, farmasi, dan integrasi klaim. Sistem mencakup proses dari pendaftaran hingga pelaporan.
 
-## Peran & Alur Sistem
-* Merancang generic master data registry dan menerapkan validation untuk unique names, automatic codes, local messages, dan pembatasan penghapusan data yang masih digunakan.
-* Menangani claims integration untuk klaim asuransi melalui read-only proxy dengan feature flag, input validation, dan penerusan response metadata ke interface.
-* Menambahkan feature tests untuk menjaga master data validation dan alur klaim tetap stabil.
-* Saya menggunakan AI-assisted coding untuk component dan test scaffolding, lalu meninjau business flows secara manual.
+## Masalah
+Entitas data master dan integrasi klaim baru memerlukan validasi yang konsisten tanpa menggandakan kode khusus per entitas.
 
-## Highlight Teknis
-Generic master data registry mencakup unique names, automatic codes, local messages, dan pembatasan penghapusan data yang masih digunakan. Entitas baru ditambahkan melalui configuration, dan saya meninjau alur klaim secara manual.
+## Kontribusi Saya
+* Merancang registry data master generik dengan validasi nama unik, kode otomatis, pesan lokal, dan pembatasan penghapusan data yang masih digunakan.
+* Mengintegrasikan alur klaim asuransi melalui proxy read-only dengan feature flag, validasi input, dan penerusan metadata respons ke antarmuka.
+* Menambahkan pengujian fitur untuk menjaga validasi data master dan alur klaim tetap stabil.
+
+## Sorotan Teknis
+Entitas baru ditambahkan melalui konfigurasi. Alur klaim dan aturan bisnis ditinjau langsung saat implementasi.

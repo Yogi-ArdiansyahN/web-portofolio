@@ -9,26 +9,30 @@ platform: ["Web App"]
 tech_stack: ["PHP", "Laravel", "Tailwind CSS", "Alpine.js", "MySQL", "Git"]
 ---
 
-## Business Context
+## Overview
 Combines bookkeeping, inventory, tax, and financial reporting into one subscription service for small businesses. Users can record transactions, manage branches, and generate standard reports without manual calculations.
 
-## Role & System Flow
-* Tidied up the financial report views, preserving line breaks in the analysis and recommendations and adjusting the cash flow labels.
+## Problem
+Report views had to stay consistent across admin and member screens while translations, charts, and pagination changed.
+
+## My Contributions
+* Tidied up financial report views, preserving line breaks in the analysis and recommendations and adjusting the cash flow labels.
 * Applied responsive fixes and pagination to the sales report page, including column translations and chart adjustments.
-* Kept admin and member reports consistent while translations, charts, and pagination were updated.
-* I used AI-assisted coding for the view and translation iterations, then reviewed the report calculation rules manually.
+* Kept admin and member reports aligned during layout and translation changes.
 
-## Technical Notes
-I updated the admin and member report views, including line breaks in analysis and recommendations, cash flow labels, responsive layout, pagination, column translations, and chart adjustments. I reviewed the report calculation rules directly.
+## Technical Highlights
+Report calculation rules were reviewed directly while updating views, labels, pagination, and charts.
 
-## Konteks Bisnis
+## Ringkasan
 Menggabungkan pembukuan, inventaris, pajak, dan pelaporan keuangan ke dalam satu layanan berlangganan untuk usaha kecil. Pengguna dapat mencatat transaksi, mengelola cabang, dan menghasilkan laporan standar tanpa perhitungan manual.
 
-## Peran & Alur Sistem
-* Merapikan financial report views, menjaga line breaks pada analysis dan recommendations serta menyesuaikan cash flow labels.
-* Menerapkan responsive fixes dan pagination pada sales report page, termasuk column translations dan chart adjustments.
-* Menjaga konsistensi laporan admin dan anggota saat translations, charts, dan pagination diperbarui.
-* Saya menggunakan AI-assisted coding untuk view dan translation iterations, lalu meninjau report calculation rules secara manual.
+## Masalah
+Tampilan laporan harus tetap konsisten di layar admin dan anggota saat terjemahan, grafik, dan halaman diubah.
 
-## Highlight Teknis
-Saya memperbarui admin dan member report views, termasuk line breaks pada analysis dan recommendations, cash flow labels, responsive fixes, pagination, column translations, dan chart adjustments. Saya meninjau report calculation rules secara langsung.
+## Kontribusi Saya
+* Merapikan tampilan laporan keuangan, menjaga jeda baris pada analisis dan rekomendasi serta menyesuaikan label arus kas.
+* Menerapkan perbaikan responsif dan halaman pada laporan penjualan, termasuk terjemahan kolom dan penyesuaian grafik.
+* Menjaga laporan admin dan anggota tetap selaras saat tata letak dan terjemahan berubah.
+
+## Sorotan Teknis
+Aturan perhitungan laporan ditinjau langsung saat memperbarui tampilan, label, halaman, dan grafik.

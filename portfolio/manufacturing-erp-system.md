@@ -9,26 +9,30 @@ platform: ["Web App"]
 tech_stack: ["TypeScript", "Angular", "RxJS", "Playwright", "Git"]
 ---
 
-## Business Context
-Supports manufacturing operations through procurement, inventory, bill of materials, production, and vendor portal modules. The system includes a set of automated tests to keep critical flows stable when the frontend changes.
+## Overview
+Supports manufacturing operations through procurement, inventory, bill of materials, production, and vendor portal modules. The system includes automated tests to keep critical flows stable when the frontend changes.
 
-## Role & System Flow
+## Problem
+Frontend changes could break critical flows, so the E2E suite had to follow the module structure.
+
+## My Contributions
 * Built ERP modules in the Angular frontend for currency and exchange rate master data, data search, and HTTP response handling.
-* Designed Playwright E2E test flows with fixtures and mock data for authentication, the supplier portal, Bill of Materials, and quality control reports.
+* Designed Playwright E2E flows with fixtures and mock data for authentication, the supplier portal, Bill of Materials, and quality control reports.
 * Kept E2E tests in sync with frontend structure changes so critical flows could still be re-run.
-* I used AI-assisted coding for test scenario creation, then mapped the business flows manually.
 
-## Technical Notes
-I separated fixtures from specs so each module has its own Playwright E2E flows for authentication, the supplier portal, Bill of Materials, and quality control reports. I mapped the business flows manually.
+## Technical Highlights
+Fixtures are separated from specs so each module owns its Playwright E2E flows. Business flows were mapped manually before writing the tests.
 
-## Konteks Bisnis
-Mendukung operasi manufaktur melalui modul pengadaan, inventaris, bill of materials, produksi, dan portal vendor. Sistem mencakup sekumpulan automated tests untuk menjaga critical flows tetap stabil saat frontend berubah.
+## Ringkasan
+Mendukung operasi manufaktur melalui modul pengadaan, inventaris, bill of materials, produksi, dan portal vendor. Sistem mencakup pengujian otomatis untuk menjaga alur penting tetap stabil saat frontend berubah.
 
-## Peran & Alur Sistem
-* Membangun modul ERP di frontend Angular untuk currency dan exchange rate master data, data search, dan HTTP response handling.
-* Merancang Playwright E2E test flows dengan fixtures dan mock data untuk authentication, supplier portal, Bill of Materials, dan quality control reports.
-* Menjaga E2E tests tetap sinkron dengan perubahan struktur frontend agar critical flows tetap dapat dijalankan ulang.
-* Saya menggunakan AI-assisted coding untuk test scenario creation, lalu memetakan business flows secara manual.
+## Masalah
+Perubahan frontend dapat merusak alur penting, sehingga rangkaian E2E harus mengikuti struktur modul.
 
-## Highlight Teknis
-Memisahkan fixtures dari specs agar setiap modul memiliki Playwright E2E flows tersendiri untuk authentication, supplier portal, Bill of Materials, dan quality control reports. Saya memetakan business flows secara manual.
+## Kontribusi Saya
+* Membangun modul ERP di frontend Angular untuk data master mata uang dan kurs, pencarian data, serta penanganan respons HTTP.
+* Merancang alur E2E Playwright dengan fixture dan data tiruan untuk autentikasi, portal pemasok, Bill of Materials, dan laporan kendali mutu.
+* Menjaga E2E tetap sinkron dengan perubahan struktur frontend agar alur penting dapat dijalankan ulang.
+
+## Sorotan Teknis
+Fixture dipisahkan dari spesifikasi sehingga setiap modul memiliki alur E2E Playwright sendiri. Alur bisnis dipetakan secara manual sebelum pengujian ditulis.

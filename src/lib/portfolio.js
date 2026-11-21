@@ -60,6 +60,8 @@ function parseEntry(path, raw) {
     platform = [];
   }
 
+  const order = Number.parseInt(meta.displayOrder ?? "", 10);
+
   return {
     slug: path.split("/").pop().replace(/\.md$/, ""),
     title: { en: meta.title ?? "", id: meta.title_id ?? "" },
@@ -67,21 +69,33 @@ function parseEntry(path, raw) {
     experience: meta.experience ?? "",
     techStack,
     platform,
-    description: {
-      en: section("Business Context"),
-      id: section("Konteks Bisnis"),
+    featured: meta.featured === "true",
+    displayOrder: Number.isFinite(order) ? order : Number.MAX_SAFE_INTEGER,
+    overview: {
+      en: section("Overview"),
+      id: section("Ringkasan"),
+    },
+    problem: {
+      en: section("Problem"),
+      id: section("Masalah"),
     },
     bullets: {
-      en: bullets("Role & System Flow"),
-      id: bullets("Peran & Alur Sistem"),
+      en: bullets("My Contributions"),
+      id: bullets("Kontribusi Saya"),
     },
     highlight: {
-      en: section("Technical Notes"),
-      id: section("Highlight Teknis"),
+      en: section("Technical Highlights"),
+      id: section("Sorotan Teknis"),
     },
   };
 }
 
 export const entries = Object.entries(files)
   .map(([path, raw]) => parseEntry(path, raw))
-  .sort((a, b) => a.title.en.localeCompare(b.title.en, "en"));
+  .sort((a, b) => {
+    if (a.featured !== b.featured) return a.featured ? -1 : 1;
+    if (a.featured && a.displayOrder !== b.displayOrder) {
+      return a.displayOrder - b.displayOrder;
+    }
+    return a.title.en.localeCompare(b.title.en, "en");
+  });

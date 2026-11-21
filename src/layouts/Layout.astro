@@ -8,6 +8,22 @@ const {
   description = initial.home.description,
   ogLocale = initial.ogLocale,
 } = Astro.props;
+
+const site = Astro.site ?? new URL("https://yogian.my.id");
+const canonical = new URL(Astro.url.pathname, site).toString();
+const socialImage = new URL("/assets/img/project/top-up-1.png", site).toString();
+const person = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Yogi Ardiansyah Nugraha",
+  jobTitle: "Software Developer",
+  url: new URL("/", site).toString(),
+  email: "mailto:yogiardiansyahn@gmail.com",
+  sameAs: [
+    "https://github.com/Yogi-ArdiansyahN",
+    "https://instagram.com/yogiardnsyhn",
+  ],
+};
 ---
 
 <!doctype html>
@@ -34,17 +50,27 @@ const {
           ?.setAttribute("content", theme === "dark" ? "#0B0B0B" : "#FFFFFF");
       })();
     </script>
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={canonical} />
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Yogi Ardiansyah Nugraha" />
     <meta property="og:locale" content={ogLocale} />
+    <meta property="og:url" content={canonical} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:image" content={socialImage} />
+    <meta property="og:image:width" content="1350" />
+    <meta property="og:image:height" content="680" />
+    <meta property="og:image:alt" content="Top-up platform interface from a portfolio project" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImage} />
+    <script type="application/ld+json" set:html={JSON.stringify(person)} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   </head>
   <body class="min-h-screen bg-canvas text-ink">
-    <main class="mx-auto w-full max-w-screen-lg flex-1 px-4 sm:px-6 lg:px-8">
+    <main id="main-content" class="mx-auto w-full max-w-screen-lg flex-1 px-4 sm:px-6 lg:px-8">
       <slot />
     </main>
     <footer class="mx-auto w-full max-w-screen-lg px-4 pb-8 sm:px-6 lg:px-8">

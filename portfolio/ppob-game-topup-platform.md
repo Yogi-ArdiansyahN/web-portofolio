@@ -6,27 +6,35 @@ scope: "Transaction flow, webhooks, and automated processing"
 scope_id: "Alur transaksi, webhook, dan pemrosesan otomatis"
 experience: "Freelance (ghstore)"
 platform: ["Web App"]
+featured: true
+displayOrder: 1
 tech_stack: ["PHP", "CodeIgniter 4", "Laravel", "Svelte", "Inertia.js", "TypeScript", "MySQL", "REST API", "GitHub Actions", "Git"]
 ---
 
-## Business Context
-Digital e-commerce platform for game top-ups and PPOB payments with balance, voucher, and gateway payment mechanisms. Customers select a product, validate their game ID, pay, and then the order is processed automatically by the digital provider, while admins manage the catalog, orders, users, and finances.
+## Overview
+E-commerce platform for game top-ups and PPOB payments. Customers validate a game ID, pay with balance, voucher, or a gateway, and the order is processed automatically by the digital provider. Admins manage the catalog, orders, users, and finances.
 
-## Role & System Flow
-* Built the flow from account verification, product catalog, ID validation, vouchers, balance or gateway payment, and webhooks through to automated processing and notifications.
-* Implemented a balance wallet, transaction log, static QRIS, balance deduction at checkout, and automatic refunds when an order fails.
+## Problem
+Order processing depends on payment callbacks and balance updates, so repeated callbacks and concurrent balance changes can leave orders and wallets out of sync.
+
+## My Contributions
+* Built the flow from account verification and product catalog to ID validation, vouchers, payment, webhooks, automated processing, and notifications.
+* Implemented a balance wallet, transaction log, static QRIS, balance deduction at checkout, and automatic refunds for failed orders.
 * Handled quality and security through automated testing, OWASP remediation, bot protection, internationalization, and a lint, test, and deploy pipeline.
 
-## Technical Notes
-I rebuilt the system from CodeIgniter 4 to Laravel with a Svelte frontend and Inertia SSR. I focused on payment callback idempotency, balance race conditions, and the order audit trail.
+## Technical Highlights
+Rebuilt the system from CodeIgniter 4 to Laravel with a Svelte frontend and Inertia SSR. Work focused on payment callback idempotency, balance race conditions, and the order audit trail.
 
-## Konteks Bisnis
-Platform e-commerce digital untuk top-up game dan pembayaran PPOB dengan mekanisme pembayaran saldo, voucher, dan gateway. Pelanggan memilih produk, memvalidasi ID game, melakukan pembayaran, lalu pesanan diproses secara otomatis oleh penyedia digital, sementara admin mengelola katalog, pesanan, pengguna, dan keuangan.
+## Ringkasan
+Platform e-commerce untuk top-up game dan pembayaran PPOB. Pelanggan memvalidasi ID game, membayar dengan saldo, voucher, atau gateway, lalu pesanan diproses otomatis oleh penyedia digital. Admin mengelola katalog, pesanan, pengguna, dan keuangan.
 
-## Peran & Alur Sistem
-* Membangun alur mulai dari verifikasi akun, product catalog, ID validation, vouchers, pembayaran saldo atau gateway, dan webhooks hingga automated processing dan notifications.
-* Menerapkan balance wallet, transaction log, QRIS statis, balance deduction saat checkout, dan automatic refunds saat pesanan gagal.
-* Menangani kualitas dan keamanan melalui automated testing, OWASP remediation, bot protection, internationalization, serta pipeline lint, test, dan deploy.
+## Masalah
+Pemrosesan pesanan bergantung pada callback pembayaran dan pembaruan saldo, sehingga callback berulang dan perubahan saldo bersamaan dapat membuat pesanan dan dompet tidak sinkron.
 
-## Highlight Teknis
-Saya membangun ulang sistem dari CodeIgniter 4 ke Laravel dengan frontend Svelte dan Inertia SSR. Saya fokus pada payment callback idempotency, balance race conditions, dan order audit trail.
+## Kontribusi Saya
+* Membangun alur dari verifikasi akun dan katalog produk hingga validasi ID, voucher, pembayaran, webhook, pemrosesan otomatis, dan notifikasi.
+* Menerapkan dompet saldo, log transaksi, QRIS statis, pemotongan saldo saat checkout, dan pengembalian dana otomatis saat pesanan gagal.
+* Menangani kualitas dan keamanan melalui pengujian otomatis, remediasi OWASP, perlindungan bot, internasionalisasi, serta pipeline lint, test, dan deploy.
+
+## Sorotan Teknis
+Membangun ulang sistem dari CodeIgniter 4 ke Laravel dengan frontend Svelte dan Inertia SSR. Fokus pada idempotensi callback pembayaran, kondisi balapan saldo, dan jejak audit pesanan.

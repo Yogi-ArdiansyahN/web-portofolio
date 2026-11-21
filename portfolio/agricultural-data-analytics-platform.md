@@ -9,26 +9,30 @@ platform: ["Web App"]
 tech_stack: ["PHP", "Laravel", "REST API", "Python", "Docker", "Git"]
 ---
 
-## Business Context
-Presents agricultural data and regional economic indicators through a dashboard and API so policymakers can monitor the agriculture sector without processing raw data. The system combines census, trade, GDP, and employment data by region.
+## Overview
+Presents agricultural data and regional economic indicators through a dashboard and API. The system combines census, trade, GDP, and employment data by region.
 
-## Role & System Flow
+## Problem
+Raw census, trade, GDP, and employment data needed a consistent API shape by state and district.
+
+## My Contributions
 * Built agricultural statistics API endpoints by state and district for demographic, census, import and export, GDP, and employment data.
 * Added API resources and routes for master data, GDP summaries, external trade, and employment analysis with a consistent JSON format.
 * Improved input validation and popup display for mobile devices.
-* I used AI-assisted coding for endpoint and resource creation, then kept the data modeling manual.
 
-## Technical Notes
-API resources and routes cover master data, GDP summaries, external trade, and employment analysis in a consistent JSON format. I modeled the data manually while adding endpoints by state and district.
+## Technical Highlights
+Data modeling was done manually while adding resources and routes for region-level statistics.
 
-## Konteks Bisnis
-Menyajikan data pertanian dan indikator ekonomi regional melalui dashboard dan API sehingga pembuat kebijakan dapat memantau sektor pertanian tanpa memproses data mentah. Sistem menggabungkan data sensus, perdagangan, PDB, dan ketenagakerjaan berdasarkan wilayah.
+## Ringkasan
+Menyajikan data pertanian dan indikator ekonomi regional melalui dashboard dan API. Sistem menggabungkan data sensus, perdagangan, PDB, dan ketenagakerjaan berdasarkan wilayah.
 
-## Peran & Alur Sistem
-* Membangun endpoint API statistik pertanian berdasarkan negara bagian dan kabupaten untuk data demografi, sensus, impor dan ekspor, PDB, dan ketenagakerjaan.
-* Menambahkan API resources dan routes untuk data master, ringkasan PDB, external trade, dan employment analysis dengan format JSON yang konsisten.
-* Meningkatkan input validation dan popup display untuk perangkat seluler.
-* Saya menggunakan AI-assisted coding untuk endpoint dan resource creation, lalu melakukan data modeling secara manual.
+## Masalah
+Data sensus, perdagangan, PDB, dan ketenagakerjaan mentah memerlukan bentuk API yang konsisten per negara bagian dan kabupaten.
 
-## Highlight Teknis
-API resources dan routes mencakup data master, ringkasan PDB, external trade, dan employment analysis dengan format JSON yang konsisten. Saya melakukan data modeling secara manual saat menambahkan endpoint per negara bagian dan kabupaten.
+## Kontribusi Saya
+* Membangun endpoint API statistik pertanian per negara bagian dan kabupaten untuk data demografi, sensus, impor dan ekspor, PDB, serta ketenagakerjaan.
+* Menambahkan resource dan rute API untuk data master, ringkasan PDB, perdagangan luar negeri, dan analisis ketenagakerjaan dengan format JSON yang konsisten.
+* Meningkatkan validasi input dan tampilan popup untuk perangkat seluler.
+
+## Sorotan Teknis
+Pemodelan data dilakukan secara manual saat menambahkan resource dan rute untuk statistik tingkat wilayah.

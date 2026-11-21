@@ -2,6 +2,7 @@ import { localized } from "../i18n.js";
 
 const timeline = [
   {
+    kind: "work",
     role: "Software Developer",
     place: "PT. Mobilus Interactive",
     period: { id: "Feb 2026 - Sekarang", en: "Feb 2026 - Present" },
@@ -12,6 +13,7 @@ const timeline = [
     current: true,
   },
   {
+    kind: "work",
     role: "Freelance Software Developer",
     place: { id: "Berbagai klien", en: "Various clients" },
     period: { id: "2025 - Sekarang", en: "2025 - Present" },
@@ -22,6 +24,7 @@ const timeline = [
     available: true,
   },
   {
+    kind: "education",
     role: "Universitas Suryakancana Cianjur",
     place: { id: "Teknik Informatika", en: "Informatics Engineering" },
     period: "2019 - 2025",
@@ -31,6 +34,7 @@ const timeline = [
     },
   },
   {
+    kind: "work",
     role: "Fullstack Software Developer",
     place: "PT. Atlantic Aksa Group",
     period: "Nov 2023 - Apr 2025",
@@ -40,6 +44,7 @@ const timeline = [
     },
   },
   {
+    kind: "education",
     role: "SMK N 1 Cianjur",
     place: {
       id: "Rekayasa Perangkat Lunak (RPL)",
@@ -53,10 +58,50 @@ const timeline = [
   },
 ];
 
-export default function Home({ entries = [], language, t }) {
-  const techStack = [...new Set(entries.flatMap((entry) => entry.techStack))].sort((a, b) =>
-    a.localeCompare(b, language)
-  );
+const stackGroups = [
+  {
+    key: "primaryStack",
+    items: [
+      "PHP",
+      "Laravel",
+      "CodeIgniter 4",
+      "React",
+      "Svelte",
+      "TypeScript",
+      "JavaScript",
+      "MySQL",
+    ],
+  },
+  {
+    key: "additionalStack",
+    items: [
+      "Ruby on Rails",
+      "Ruby",
+      "Angular",
+      "React Native",
+      "Inertia.js",
+      "TanStack Query",
+      "RxJS",
+      "Expo",
+      "Web Push",
+      "REST API",
+      "Python",
+      "Tailwind CSS",
+      "Alpine.js",
+      "jQuery",
+      "CodeIgniter",
+      "Bootstrap",
+    ],
+  },
+  {
+    key: "toolsStack",
+    items: ["Git", "GitHub Actions", "Docker", "Playwright"],
+  },
+];
+
+export default function Home({ language, t }) {
+  const work = timeline.filter((item) => item.kind === "work");
+  const education = timeline.filter((item) => item.kind === "education");
 
   return (
     <div className="space-y-12 sm:space-y-16">
@@ -65,9 +110,26 @@ export default function Home({ entries = [], language, t }) {
           <h1 className="text-fluid-display font-extrabold text-balance">
             Yogi Ardiansyah Nugraha
           </h1>
+          <p className="mt-3 text-base font-semibold text-ink sm:text-lg">
+            {t.home.role}
+          </p>
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
             {t.home.intro}
           </p>
+          <div className="mt-7 flex flex-wrap gap-3 print:hidden">
+            <a
+              href="/project"
+              className="inline-flex min-h-11 items-center border border-ink bg-ink px-4 text-sm font-semibold text-canvas transition-colors hover:bg-transparent hover:text-ink"
+            >
+              {t.home.viewWork}
+            </a>
+            <a
+              href="mailto:yogiardiansyahn@gmail.com"
+              className="inline-flex min-h-11 items-center border border-ink/20 px-4 text-sm font-semibold text-ink transition-colors hover:border-ink hover:bg-surface"
+            >
+              {t.home.contactCta}
+            </a>
+          </div>
         </div>
         <aside
           aria-label={t.home.contactLabel}
@@ -109,17 +171,17 @@ export default function Home({ entries = [], language, t }) {
             {t.home.experienceHeading}
           </h2>
         </div>
-        <div className="journey-wrap">
+        <div className="journey-wrap journey-wrap--three">
           <svg
             aria-hidden="true"
             className="journey-road"
             preserveAspectRatio="none"
             viewBox="0 0 1000 140"
           >
-            <path d="M100 19 L300 119 L500 39 L700 119 L900 39" />
+            <path d="M167 19 L500 119 L833 39" />
           </svg>
           <ol className="journey-roadmap">
-            {timeline.map((item) => (
+            {work.map((item) => (
               <li key={item.role} className="journey-stop">
                 <span className="journey-stop-marker" aria-hidden="true">
                   <span />
@@ -138,13 +200,7 @@ export default function Home({ entries = [], language, t }) {
                   </p>
                   <h3 className="journey-title">{item.role}</h3>
                   <p className="journey-place">
-                    {item.href ? (
-                      <a className="underline-offset-4 hover:underline" href={item.href}>
-                        {localized(item.place, language)}
-                      </a>
-                    ) : (
-                      localized(item.place, language)
-                    )}
+                    {localized(item.place, language)}
                   </p>
                   <p className="journey-description">
                     {localized(item.description, language)}
@@ -156,26 +212,59 @@ export default function Home({ entries = [], language, t }) {
         </div>
       </section>
 
+      <section aria-labelledby="education-heading">
+        <div className="border-b border-ink/20 pb-4">
+          <h2 id="education-heading" className="text-fluid-section font-extrabold">
+            {t.home.educationHeading}
+          </h2>
+        </div>
+        <ul className="mt-6 space-y-0">
+          {education.map((item) => (
+            <li key={item.role} className="border-b border-ink/20 py-5 last:border-b-0">
+              <div className="flex flex-wrap items-baseline justify-between gap-2">
+                <h3 className="text-lg font-bold">{item.role}</h3>
+                <p className="text-sm text-muted">{localized(item.period, language)}</p>
+              </div>
+              <p className="mt-1 text-sm font-semibold text-ink">
+                {localized(item.place, language)}
+              </p>
+              <p className="mt-2 text-sm leading-relaxed text-muted">
+                {localized(item.description, language)}
+              </p>
+            </li>
+          ))}
+        </ul>
+      </section>
+
       <section aria-labelledby="stack-heading">
         <div className="border-b border-ink/20 pb-4">
           <h2 id="stack-heading" className="text-fluid-section font-extrabold">
             {t.home.stackHeading}
           </h2>
         </div>
-        <p className="mt-4 text-sm leading-relaxed text-muted sm:text-base">
+        <p className="mt-4 max-w-3xl text-sm leading-relaxed text-muted sm:text-base">
           {t.home.stackCopy}
         </p>
-        <ul className="mt-6 flex flex-wrap gap-2">
-          {techStack.map((tech) => (
-            <li
-              key={tech}
-              lang="en"
-              className="border border-ink/20 px-3 py-2 text-sm text-muted"
-            >
-              {tech}
-            </li>
-          ))}
-        </ul>
+        {stackGroups.map((group, groupIndex) => (
+          <div key={group.key} className={groupIndex === 0 ? "mt-6" : "mt-5"}>
+            <h3 className="text-sm font-bold text-ink">{t.home[group.key]}</h3>
+            <ul className="mt-2 flex flex-wrap gap-2">
+              {group.items.map((tech) => (
+                <li
+                  key={tech}
+                  lang="en"
+                  className={`border border-ink/20 text-muted ${
+                    groupIndex === 0
+                      ? "px-3 py-2 text-sm"
+                      : "px-2 py-1 text-xs"
+                  }`}
+                >
+                  {tech}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </section>
     </div>
   );

@@ -9,24 +9,30 @@ platform: ["Web App"]
 tech_stack: ["PHP", "CodeIgniter 4", "JavaScript", "MySQL", "Bootstrap", "Git"]
 ---
 
-## Business Context
-A cashier system for a beverage shop chain that helps owners monitor sales and reporting across multiple branches in real time. Transaction data is centralized, so there is no need for manual recaps from each location.
+## Overview
+A cashier system for a beverage shop chain with centralized sales and reporting across branches. Transaction data is available in one place instead of separate branch recaps.
 
-## Role & System Flow
+## Problem
+Owners relied on manual recaps from each branch to see daily revenue and transactions.
+
+## My Contributions
 * Built the cashier and sales reporting module for multiple branches in one system.
-* Prepared a responsive view for monitoring daily revenue and transaction summaries.
+* Prepared a responsive view for daily revenue and transaction summaries.
 * Managed MySQL queries and data flows between branches to keep reports in sync.
 
-## Technical Notes
-Real-time reporting replaced manual recaps from each branch. I managed MySQL queries and data flows between branches, and recorded query and view changes in Git.
+## Technical Highlights
+Real-time reporting replaced manual branch recaps. Query and view changes were tracked in Git.
 
-## Konteks Bisnis
-Sistem kasir untuk jaringan toko minuman yang membantu pemilik memantau penjualan dan pelaporan di banyak cabang secara real-time. Data transaksi terpusat, sehingga tidak perlu lagi rekap manual dari setiap lokasi.
+## Ringkasan
+Sistem kasir untuk jaringan toko minuman dengan penjualan dan pelaporan terpusat di banyak cabang. Data transaksi tersedia di satu tempat, bukan rekap terpisah per cabang.
 
-## Peran & Alur Sistem
-* Membangun cashier dan sales reporting module untuk banyak cabang dalam satu sistem.
-* Menyiapkan responsive view untuk memantau pendapatan harian dan transaction summaries.
-* Mengelola MySQL queries dan data flows antarcabang agar reports tetap sinkron.
+## Masalah
+Pemilik mengandalkan rekap manual dari setiap cabang untuk melihat pendapatan dan transaksi harian.
 
-## Highlight Teknis
-Real-time reporting menggantikan rekap manual dari setiap cabang. Saya mengelola MySQL queries dan data flows antarcabang, lalu mencatat query dan view changes di Git.
+## Kontribusi Saya
+* Membangun modul kasir dan laporan penjualan untuk banyak cabang dalam satu sistem.
+* Menyiapkan tampilan responsif untuk pendapatan harian dan ringkasan transaksi.
+* Mengelola kueri MySQL dan alur data antarcabang agar laporan tetap sinkron.
+
+## Sorotan Teknis
+Pelaporan waktu nyata menggantikan rekap manual per cabang. Perubahan kueri dan tampilan dicatat di Git.

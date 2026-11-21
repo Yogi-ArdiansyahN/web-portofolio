@@ -132,6 +132,13 @@ summary {
 .journey-stop:nth-child(4) { padding-top: 100px; }
 .journey-stop:nth-child(5) { padding-top: 20px; }
 
+.journey-wrap--three .journey-roadmap {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.journey-wrap--three .journey-stop:nth-child(2) { padding-top: 100px; }
+.journey-wrap--three .journey-stop:nth-child(3) { padding-top: 20px; }
+
 .journey-stop-marker {
   position: relative;
   z-index: 1;

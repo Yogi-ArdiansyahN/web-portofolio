@@ -63,6 +63,12 @@ export default function App({ entries, page, pathname }) {
 
   return (
     <div className="min-h-screen">
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:bg-ink focus:px-4 focus:py-2 focus:text-sm focus:text-canvas"
+      >
+        {t.a11y.skip}
+      </a>
       <header className="sticky top-0 z-30 border-b border-ink/20 bg-canvas">
         <div className="mx-auto flex w-full max-w-screen-lg flex-wrap items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8">
           <a
