@@ -123,12 +123,6 @@ export default function Home({ language, t }) {
             >
               {t.home.viewWork}
             </a>
-            <a
-              href="mailto:yogiardiansyahn@gmail.com"
-              className="inline-flex min-h-11 items-center border border-ink/20 px-4 text-sm font-semibold text-ink transition-colors hover:border-ink hover:bg-surface"
-            >
-              {t.home.contactCta}
-            </a>
           </div>
         </div>
         <aside

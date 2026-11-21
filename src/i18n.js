@@ -24,7 +24,6 @@ export const copy = {
       intro:
         "Developer web dengan latar belakang RPL dan Teknik Informatika. Saya mengerjakan API, interfaces, dan integrations untuk sistem operasional, transaksi, dan layanan kesehatan. Stack berbeda tiap project, termasuk Laravel, PHP, React, dan TypeScript.",
       viewWork: "Lihat Proyek",
-      contactCta: "Hubungi Saya",
       contactLabel: "Informasi kontak",
       experienceHeading: "Pengalaman Profesional",
       educationHeading: "Pendidikan",
@@ -85,7 +84,6 @@ export const copy = {
       intro:
         "Software developer with a background in software engineering and informatics engineering. I work on APIs, interfaces, and integrations for operational, transaction, and healthcare systems. The stack changes per project, including Laravel, PHP, React, and TypeScript.",
       viewWork: "View My Work",
-      contactCta: "Contact Me",
       contactLabel: "Contact information",
       experienceHeading: "Professional Experience",
       educationHeading: "Education",
