@@ -1,28 +1,52 @@
 ---
-// src/layouts/Layout.astro
 import "../styles/global.css";
+import { copy } from "../i18n.js";
+
+const initial = copy.en;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>YogiAN | Portofolio</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
+    <title>{initial.documentTitle}</title>
+    <meta name="description" content={initial.description} />
+    <meta name="theme-color" content="#0B0B0B" />
+    <script is:inline>
+      (() => {
+        let saved = null;
+        try {
+          saved = window.localStorage.getItem("portfolio-theme");
+        } catch {
+          saved = null;
+        }
+        const theme =
+          saved === "dark" || saved === "light" ? saved : "dark";
+        document.documentElement.dataset.theme = theme;
+        document
+          .querySelector('meta[name="theme-color"]')
+          ?.setAttribute("content", theme === "dark" ? "#0B0B0B" : "#FFFFFF");
+      })();
+    </script>
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content={initial.ogLocale} />
+    <meta property="og:title" content={initial.documentTitle} />
+    <meta property="og:description" content={initial.description} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={initial.documentTitle} />
+    <meta name="twitter:description" content={initial.description} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   </head>
-  <body class="dark font-montserrat min-h-screen flex flex-col">
-    <main class="mx-auto max-w-screen-md">
+  <body class="min-h-screen bg-canvas text-ink">
+    <main class="mx-auto w-full max-w-screen-lg flex-1 px-4 sm:px-6 lg:px-8">
       <slot />
     </main>
-    <footer class="my-5 text-center text-sm font-bold mt-auto">
-      2024 - PRESENT © YOGIAN
+    <footer class="mx-auto w-full max-w-screen-lg px-4 pb-8 sm:px-6 lg:px-8">
+      <div class="mt-12 flex flex-col gap-2 border-t border-ink/20 pt-5 text-xs text-muted sm:flex-row sm:items-center sm:justify-between">
+        <span class="font-bold text-ink">YOGIAN</span>
+        <span>2023 - 2026 © Yogi Ardiansyah Nugraha</span>
+      </div>
     </footer>
   </body>
 </html>
