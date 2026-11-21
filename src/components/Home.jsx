@@ -2,7 +2,7 @@ import { localized } from "../i18n.js";
 
 const timeline = [
   {
-    role: "Web Developer",
+    role: "Software Developer",
     place: "PT. Mobilus Interactive",
     period: { id: "Feb 2026 - Sekarang", en: "Feb 2026 - Present" },
     description: {
@@ -12,7 +12,7 @@ const timeline = [
     current: true,
   },
   {
-    role: "Freelance Web Developer",
+    role: "Freelance Software Developer",
     place: { id: "Berbagai klien", en: "Various clients" },
     period: { id: "2025 - Sekarang", en: "2025 - Present" },
     description: {
@@ -31,7 +31,7 @@ const timeline = [
     },
   },
   {
-    role: "Fullstack Web Developer",
+    role: "Fullstack Software Developer",
     place: "PT. Atlantic Aksa Group",
     period: "Nov 2023 - Apr 2025",
     description: {

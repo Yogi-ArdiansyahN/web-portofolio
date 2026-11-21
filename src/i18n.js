@@ -55,7 +55,7 @@ export const copy = {
     },
     home: {
       intro:
-        "Web developer with a background in software engineering and informatics engineering. I work on APIs, interfaces, and integrations for operational, transaction, and healthcare systems. The stack changes per project, including Laravel, PHP, React, and TypeScript.",
+        "Software developer with a background in software engineering and informatics engineering. I work on APIs, interfaces, and integrations for operational, transaction, and healthcare systems. The stack changes per project, including Laravel, PHP, React, and TypeScript.",
       contactLabel: "Contact information",
       experienceHeading: "Journey",
       current: "Current",
