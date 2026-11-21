@@ -5,6 +5,7 @@ role: "Fullstack Web Dev"
 scope: "Angular ERP modules, master data, search, and HTTP response handling"
 scope_id: "Modul ERP Angular, data master, search, dan HTTP response handling"
 experience: "PT. Mobilus Interactive"
+platform: ["Web App"]
 tech_stack: ["TypeScript", "Angular", "RxJS", "Playwright", "Git"]
 ---
 

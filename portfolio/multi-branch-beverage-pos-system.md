@@ -5,6 +5,7 @@ role: "Fullstack Web Dev"
 scope: "Cashier and multi-branch reporting modules"
 scope_id: "Modul kasir dan pelaporan multi-cabang"
 experience: "PT. Atlantic Aksa Group"
+platform: ["Web App"]
 tech_stack: ["PHP", "CodeIgniter 4", "JavaScript", "MySQL", "Bootstrap", "Git"]
 ---
 

@@ -5,6 +5,7 @@ role: "Fullstack Web Dev"
 scope: "Health summary sharing and cross-device notification mechanism"
 scope_id: "Mekanisme berbagi ringkasan kesehatan dan notifikasi lintas perangkat"
 experience: "PT. Mobilus Interactive"
+platform: ["Web App", "Mobile App"]
 tech_stack: ["TypeScript", "React", "Expo", "Ruby on Rails", "Web Push", "Git"]
 ---
 

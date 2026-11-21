@@ -5,6 +5,7 @@ role: "Fullstack Web Dev"
 scope: "Transaction flow, webhooks, and automated processing"
 scope_id: "Alur transaksi, webhook, dan pemrosesan otomatis"
 experience: "Freelance (ghstore)"
+platform: ["Web App"]
 tech_stack: ["PHP", "CodeIgniter 4", "Laravel", "Svelte", "Inertia.js", "TypeScript", "MySQL", "REST API", "GitHub Actions", "Git"]
 ---
 

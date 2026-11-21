@@ -5,6 +5,7 @@ role: "Fullstack Web Dev"
 scope: "Master tables and payments in server-side DataTables"
 scope_id: "Tabel master dan pembayaran pada DataTables server-side"
 experience: "PT. Mobilus Interactive"
+platform: ["Web App"]
 tech_stack: ["PHP", "CodeIgniter", "MySQL", "jQuery", "Git"]
 ---
 

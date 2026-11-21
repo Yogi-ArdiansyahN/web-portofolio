@@ -56,12 +56,21 @@ function parseEntry(path: string, raw: string) {
     techStack = [];
   }
 
+  let platform: string[] = [];
+  try {
+    const parsed = JSON.parse(meta.platform ?? "[]");
+    platform = Array.isArray(parsed) ? parsed.filter((v) => typeof v === "string") : [];
+  } catch {
+    platform = [];
+  }
+
   return {
     slug: path.split("/").pop()!.replace(/\.md$/, ""),
     title: { en: meta.title ?? "", id: meta.title_id ?? "" },
     scope: { en: meta.scope ?? "", id: meta.scope_id ?? "" },
     experience: meta.experience ?? "",
     techStack,
+    platform,
     description: {
       en: section("Business Context"),
       id: section("Konteks Bisnis"),

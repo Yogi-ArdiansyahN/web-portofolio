@@ -5,6 +5,7 @@ role: "Fullstack Web Dev"
 scope: "Generic master data registry and medical data validation"
 scope_id: "Registry data master generik dan medical data validation"
 experience: "PT. Mobilus Interactive"
+platform: ["Web App"]
 tech_stack: ["PHP", "Laravel", "Inertia.js", "React", "TypeScript", "Git"]
 ---
 

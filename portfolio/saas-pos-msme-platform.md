@@ -5,6 +5,7 @@ role: "Fullstack Web Dev"
 scope: "Cashier transaction flow and sales reports"
 scope_id: "Alur transaksi kasir dan laporan penjualan"
 experience: "PT. Atlantic Aksa Group"
+platform: ["Web App"]
 tech_stack: ["PHP", "CodeIgniter 4", "JavaScript", "jQuery", "MySQL", "Bootstrap", "Git"]
 ---
 

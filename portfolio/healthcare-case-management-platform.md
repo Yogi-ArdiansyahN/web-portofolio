@@ -5,6 +5,7 @@ role: "Fullstack Web Dev"
 scope: "Medical record, signature, and frontend-API synchronization flows"
 scope_id: "Alur rekam medis, tanda tangan, dan sinkronisasi frontend-API"
 experience: "PT. Mobilus Interactive"
+platform: ["Web App"]
 tech_stack: ["Ruby", "Rails", "React", "TypeScript", "TanStack Query", "Git"]
 ---
 

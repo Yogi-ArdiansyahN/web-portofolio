@@ -5,6 +5,7 @@ role: "Fullstack Web Dev"
 scope: "Agricultural statistics API endpoints by region"
 scope_id: "Endpoint API statistik pertanian berdasarkan wilayah"
 experience: "PT. Mobilus Interactive"
+platform: ["Web App"]
 tech_stack: ["PHP", "Laravel", "REST API", "Python", "Docker", "Git"]
 ---
 

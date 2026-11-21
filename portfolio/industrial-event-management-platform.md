@@ -5,6 +5,7 @@ role: "Fullstack Web Dev"
 scope: "Article and category CRUD with search and pagination"
 scope_id: "CRUD artikel dan kategori dengan search dan pagination"
 experience: "PT. Mobilus Interactive"
+platform: ["Web App"]
 tech_stack: ["PHP", "Laravel", "Tailwind CSS", "Alpine.js", "Git"]
 ---
 

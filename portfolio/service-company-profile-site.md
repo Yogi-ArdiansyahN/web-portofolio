@@ -5,6 +5,7 @@ role: "Fullstack Web Dev"
 scope: "Profile pages and admin panel content"
 scope_id: "Halaman profil dan konten panel admin"
 experience: "PT. Atlantic Aksa Group"
+platform: ["Web App"]
 tech_stack: ["PHP", "CodeIgniter 4", "JavaScript", "MySQL", "Bootstrap", "Git"]
 ---
 

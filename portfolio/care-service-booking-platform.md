@@ -5,6 +5,7 @@ role: "Fullstack Web Dev"
 scope: "Booking flow, booking sessions, payments, and reviews"
 scope_id: "Alur pemesanan, sesi pemesanan, pembayaran, dan ulasan"
 experience: "PT. Mobilus Interactive"
+platform: ["Web App", "Mobile App"]
 tech_stack: ["PHP", "Laravel", "React Native", "MySQL", "Git"]
 ---
 

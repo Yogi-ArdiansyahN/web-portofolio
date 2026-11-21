@@ -5,6 +5,7 @@ role: "Fullstack Web Dev"
 scope: "Financial report views and cash flow labels"
 scope_id: "View laporan keuangan dan cash flow labels"
 experience: "PT. Mobilus Interactive"
+platform: ["Web App"]
 tech_stack: ["PHP", "Laravel", "Tailwind CSS", "Alpine.js", "MySQL", "Git"]
 ---
 

@@ -5,6 +5,7 @@ role: "Fullstack Web Dev"
 scope: "Catalog interface and top-up ordering flow"
 scope_id: "Catalog interface dan top-up ordering flow"
 experience: "PT. Atlantic Aksa Group"
+platform: ["Web App"]
 tech_stack: ["PHP", "CodeIgniter 4", "JavaScript", "jQuery", "Tailwind CSS", "Git"]
 ---
 
