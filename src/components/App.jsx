@@ -24,7 +24,12 @@ export default function App({ entries, page, pathname }) {
   const themeLabel = theme === "dark" ? t.theme.switchToLight : t.theme.switchToDark;
 
   useEffect(() => {
-    const saved = window.localStorage.getItem(STORAGE_KEY);
+    let saved = null;
+    try {
+      saved = window.localStorage.getItem(STORAGE_KEY);
+    } catch {
+      saved = null;
+    }
     if (saved === "id" || saved === "en") setLanguage(saved);
     setReady(true);
   }, []);
@@ -39,12 +44,17 @@ export default function App({ entries, page, pathname }) {
     document.title = pageCopy.documentTitle;
     setContent('meta[name="description"]', pageCopy.description);
     setContent('meta[property="og:locale"]', t.ogLocale);
+    setContent('meta[property="og:locale:alternate"]', nextLanguage === "id" ? "id_ID" : "en_US");
     setContent('meta[property="og:title"]', pageCopy.documentTitle);
     setContent('meta[property="og:description"]', pageCopy.description);
+    setContent('meta[property="og:image:alt"]', t.ogImageAlt);
     setContent('meta[name="twitter:title"]', pageCopy.documentTitle);
     setContent('meta[name="twitter:description"]', pageCopy.description);
-    window.localStorage.setItem(STORAGE_KEY, language);
-  }, [language, ready, pageCopy, t.ogLocale]);
+    setContent('meta[name="twitter:image:alt"]', t.ogImageAlt);
+    try {
+      window.localStorage.setItem(STORAGE_KEY, language);
+    } catch {}
+  }, [language, nextLanguage, ready, pageCopy, t.ogLocale, t.ogImageAlt]);
 
   useEffect(() => {
     const initial = document.documentElement.dataset.theme === "dark" ? "dark" : "light";
@@ -58,7 +68,9 @@ export default function App({ entries, page, pathname }) {
     document
       .querySelector('meta[name="theme-color"]')
       ?.setAttribute("content", theme === "dark" ? "#0B0B0B" : "#FFFFFF");
-    window.localStorage.setItem(THEME_STORAGE_KEY, theme);
+    try {
+      window.localStorage.setItem(THEME_STORAGE_KEY, theme);
+    } catch {}
   }, [theme, themeReady]);
 
   return (
@@ -102,7 +114,7 @@ export default function App({ entries, page, pathname }) {
               aria-label={t.language.switchTo}
               data-tooltip={t.language.switchTo}
               onClick={() => setLanguage(nextLanguage)}
-              className="icon-tooltip grid min-h-11 min-w-11 place-items-center rounded-sm border border-ink/20 text-ink transition-colors hover:border-ink hover:bg-surface"
+              className="icon-tooltip grid min-h-11 min-w-11 place-items-center rounded-sm border border-ink/50 text-ink transition-colors hover:border-ink hover:bg-surface"
             >
               {language === "id" ? (
                 <svg aria-hidden="true" viewBox="0 0 24 16" className="h-4 w-6">
@@ -139,7 +151,7 @@ export default function App({ entries, page, pathname }) {
               aria-label={themeLabel}
               data-tooltip={themeLabel}
               onClick={() => setTheme(nextTheme)}
-              className="icon-tooltip grid min-h-11 min-w-11 place-items-center rounded-sm border border-ink/20 text-ink transition-colors hover:border-ink hover:bg-surface"
+              className="icon-tooltip grid min-h-11 min-w-11 place-items-center rounded-sm border border-ink/50 text-ink transition-colors hover:border-ink hover:bg-surface"
             >
               {theme === "dark" ? (
                 <svg
@@ -174,15 +186,19 @@ export default function App({ entries, page, pathname }) {
         </div>
       </header>
 
-      <div id="app" className="px-0 pb-4 pt-10 sm:pt-12">
+      <main
+        id="main-content"
+        tabIndex={-1}
+        className="mx-auto w-full max-w-screen-lg flex-1 px-4 pb-4 pt-10 sm:px-6 sm:pt-12 lg:px-8"
+      >
         <div className="view-panel">
           {page === "project" ? (
             <Project entries={entries} language={language} t={t} />
           ) : (
-            <Home entries={entries} language={language} t={t} />
+            <Home language={language} t={t} />
           )}
         </div>
-      </div>
+      </main>
     </div>
   );
 }

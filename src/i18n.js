@@ -1,6 +1,7 @@
 export const copy = {
   id: {
     ogLocale: "id_ID",
+    ogImageAlt: "Tangkapan layar platform top-up game dan PPOB dari salah satu project portofolio",
     nav: {
       mainLabel: "Navigasi utama",
       home: "Beranda",
@@ -24,6 +25,9 @@ export const copy = {
       intro:
         "Developer web dengan latar belakang RPL dan Teknik Informatika. Saya mengerjakan API, interfaces, dan integrations untuk sistem operasional, transaksi, dan layanan kesehatan. Stack berbeda tiap project, termasuk Laravel, PHP, React, dan TypeScript.",
       viewWork: "Lihat Proyek",
+      downloadResume: "Unduh Resume",
+      resumeEnglish: "Bahasa Inggris",
+      resumeIndonesian: "Bahasa Indonesia",
       contactLabel: "Informasi kontak",
       experienceHeading: "Pengalaman Profesional",
       educationHeading: "Pendidikan",
@@ -35,6 +39,13 @@ export const copy = {
       primaryStack: "Stack Utama",
       additionalStack: "Teknologi Tambahan",
       toolsStack: "Tools & Workflow",
+    },
+    resume: {
+      title: "Resume Software Developer",
+      experience: "Pengalaman Kerja",
+      education: "Pendidikan",
+      skills: "Keahlian",
+      projects: "Proyek",
     },
     project: {
       documentTitle: "Kontribusi Project | Yogi Ardiansyah Nugraha",
@@ -61,6 +72,7 @@ export const copy = {
   },
   en: {
     ogLocale: "en_US",
+    ogImageAlt: "Top-up platform interface from a portfolio project",
     nav: {
       mainLabel: "Main navigation",
       home: "Home",
@@ -84,6 +96,9 @@ export const copy = {
       intro:
         "Software developer with a background in software engineering and informatics engineering. I work on APIs, interfaces, and integrations for operational, transaction, and healthcare systems. The stack changes per project, including Laravel, PHP, React, and TypeScript.",
       viewWork: "View My Work",
+      downloadResume: "Download Resume",
+      resumeEnglish: "English",
+      resumeIndonesian: "Indonesian",
       contactLabel: "Contact information",
       experienceHeading: "Professional Experience",
       educationHeading: "Education",
@@ -95,6 +110,13 @@ export const copy = {
       primaryStack: "Primary Stack",
       additionalStack: "Additional Technologies",
       toolsStack: "Tools & Workflow",
+    },
+    resume: {
+      title: "Software Developer Resume",
+      experience: "Work Experience",
+      education: "Education",
+      skills: "Skills",
+      projects: "Projects",
     },
     project: {
       documentTitle: "Project Contributions | Yogi Ardiansyah Nugraha",

@@ -87,9 +87,7 @@ function PlatformList({ items = [], className = "" }) {
       {items.map((item) => (
         <li
           key={item}
-          tabIndex={0}
           data-tooltip={item}
-          aria-label={item}
           className="icon-tooltip grid h-6 w-6 place-items-center text-ink [&::after]:left-0 [&::after]:right-auto"
         >
           <svg
@@ -104,6 +102,7 @@ function PlatformList({ items = [], className = "" }) {
           >
             {platformIcons[item] ?? <circle cx="12" cy="12" r="8" />}
           </svg>
+          <span className="sr-only">{item}</span>
         </li>
       ))}
     </ul>
@@ -171,7 +170,7 @@ export default function Project({ entries = [], language, t }) {
           <button
             type="button"
             onClick={(e) => open(entry.slug, e.currentTarget)}
-            className="min-h-11 border border-ink/20 px-4 text-sm font-semibold text-ink transition-colors hover:border-ink hover:bg-surface"
+            className="min-h-11 border border-ink/50 px-4 text-sm font-semibold text-ink transition-colors hover:border-ink hover:bg-surface"
           >
             {t.project.detailsLabel}
           </button>
@@ -245,7 +244,7 @@ export default function Project({ entries = [], language, t }) {
                 type="button"
                 onClick={close}
                 aria-label={t.project.close}
-                className="grid min-h-11 min-w-11 shrink-0 place-items-center border border-ink/20 text-ink transition-colors hover:border-ink hover:bg-surface"
+                className="grid min-h-11 min-w-11 shrink-0 place-items-center border border-ink/50 text-ink transition-colors hover:border-ink hover:bg-surface"
               >
                 <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className="h-5 w-5">
                   <path d="M6 6l12 12M18 6 6 18" />

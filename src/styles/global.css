@@ -10,6 +10,7 @@
 
 html {
   color-scheme: light;
+  scrollbar-gutter: stable;
 }
 
 html[data-theme="dark"] {
@@ -70,10 +71,25 @@ summary {
 }
 
 .icon-tooltip:hover::after,
-.icon-tooltip:focus-visible::after,
-.icon-tooltip:focus::after {
+.icon-tooltip:focus-visible::after {
   opacity: 1;
   visibility: visible;
+}
+
+.resume-picker summary {
+  list-style: none;
+}
+
+.resume-picker summary::-webkit-details-marker {
+  display: none;
+}
+
+.resume-picker-chevron {
+  transition: transform 150ms ease;
+}
+
+.resume-picker[open] .resume-picker-chevron {
+  transform: rotate(180deg);
 }
 
 .text-fluid-display {

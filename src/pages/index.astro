@@ -1,7 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import App from "../components/App.jsx";
-import { entries } from "../lib/portfolio.js";
 import { copy } from "../i18n.js";
 
 const initial = copy.en;
@@ -12,5 +11,5 @@ const initial = copy.en;
   description={initial.home.description}
   ogLocale={initial.ogLocale}
 >
-  <App client:load entries={entries} page="home" pathname={Astro.url.pathname} />
+  <App client:load entries={[]} page="home" pathname={Astro.url.pathname} />
 </Layout>

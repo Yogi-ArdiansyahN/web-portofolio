@@ -1,103 +1,5 @@
+import { profile, stackGroups, timeline } from "../data/resume.js";
 import { localized } from "../i18n.js";
-
-const timeline = [
-  {
-    kind: "work",
-    role: "Software Developer",
-    place: "PT. Mobilus Interactive",
-    period: { id: "Feb 2026 - Sekarang", en: "Feb 2026 - Present" },
-    description: {
-      id: "Mengerjakan API, interfaces, dan integrations untuk sistem operasional, transaksi, serta layanan kesehatan dalam tim.",
-      en: "Work on APIs, interfaces, and integrations for operational, transaction, and healthcare systems in a team.",
-    },
-    current: true,
-  },
-  {
-    kind: "work",
-    role: "Freelance Software Developer",
-    place: { id: "Berbagai klien", en: "Various clients" },
-    period: { id: "2025 - Sekarang", en: "2025 - Present" },
-    description: {
-      id: "Mengerjakan website dan aplikasi web untuk berbagai klien, mulai dari frontend hingga API integrations dan transaction flows.",
-      en: "Build websites and web applications for various clients, from frontend work to API integrations and transaction flows.",
-    },
-    available: true,
-  },
-  {
-    kind: "education",
-    role: "Universitas Suryakancana Cianjur",
-    place: { id: "Teknik Informatika", en: "Informatics Engineering" },
-    period: "2019 - 2025",
-    description: {
-      id: "Menempuh pendidikan Teknik Informatika dengan fokus pada software development.",
-      en: "Studied informatics engineering with a focus on software development.",
-    },
-  },
-  {
-    kind: "work",
-    role: "Fullstack Software Developer",
-    place: "PT. Atlantic Aksa Group",
-    period: "Nov 2023 - Apr 2025",
-    description: {
-      id: "Mengembangkan POS systems dan transaction portal untuk operasional multi-cabang.",
-      en: "Developed POS systems and transaction portals for multi-branch operations.",
-    },
-  },
-  {
-    kind: "education",
-    role: "SMK N 1 Cianjur",
-    place: {
-      id: "Rekayasa Perangkat Lunak (RPL)",
-      en: "Software Engineering",
-    },
-    period: "2016 - 2019",
-    description: {
-      id: "Mempelajari dasar software engineering sebelum melanjutkan ke pendidikan tinggi.",
-      en: "Built foundational software engineering skills before continuing to higher education.",
-    },
-  },
-];
-
-const stackGroups = [
-  {
-    key: "primaryStack",
-    items: [
-      "PHP",
-      "Laravel",
-      "CodeIgniter 4",
-      "React",
-      "Svelte",
-      "TypeScript",
-      "JavaScript",
-      "MySQL",
-    ],
-  },
-  {
-    key: "additionalStack",
-    items: [
-      "Ruby on Rails",
-      "Ruby",
-      "Angular",
-      "React Native",
-      "Inertia.js",
-      "TanStack Query",
-      "RxJS",
-      "Expo",
-      "Web Push",
-      "REST API",
-      "Python",
-      "Tailwind CSS",
-      "Alpine.js",
-      "jQuery",
-      "CodeIgniter",
-      "Bootstrap",
-    ],
-  },
-  {
-    key: "toolsStack",
-    items: ["Git", "GitHub Actions", "Docker", "Playwright"],
-  },
-];
 
 export default function Home({ language, t }) {
   const work = timeline.filter((item) => item.kind === "work");
@@ -108,7 +10,7 @@ export default function Home({ language, t }) {
       <section className="grid gap-10 lg:grid-cols-12 lg:gap-12">
         <div className="min-w-0 lg:col-span-8">
           <h1 className="text-fluid-display font-extrabold text-balance">
-            Yogi Ardiansyah Nugraha
+            {profile.name}
           </h1>
           <p className="mt-3 text-base font-semibold text-ink sm:text-lg">
             {t.home.role}
@@ -116,13 +18,48 @@ export default function Home({ language, t }) {
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
             {t.home.intro}
           </p>
-          <div className="mt-7 flex flex-wrap gap-3 print:hidden">
+          <div className="mt-7 flex flex-wrap items-start gap-3 print:hidden">
             <a
               href="/project"
               className="inline-flex min-h-11 items-center border border-ink bg-ink px-4 text-sm font-semibold text-canvas transition-colors hover:bg-transparent hover:text-ink"
             >
               {t.home.viewWork}
             </a>
+            {/*
+            <details className="resume-picker relative">
+              <summary className="inline-flex min-h-11 items-center gap-2 border border-ink/50 px-4 text-sm font-semibold text-ink transition-colors hover:border-ink hover:bg-surface">
+                {t.home.downloadResume}
+                <svg
+                  aria-hidden="true"
+                  viewBox="0 0 12 8"
+                  className="resume-picker-chevron h-2 w-3"
+                >
+                  <path
+                    d="M1 1l5 5 5-5"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                  />
+                </svg>
+              </summary>
+              <div className="absolute left-0 top-[calc(100%+8px)] z-20 flex w-max max-w-[calc(100vw-32px)] flex-col border border-ink bg-canvas p-2 shadow-sm">
+                <a
+                  href="/resume-en.pdf"
+                  download
+                  className="inline-flex min-h-11 items-center px-3 text-sm font-semibold text-ink transition-colors hover:bg-surface"
+                >
+                  {t.home.resumeEnglish}
+                </a>
+                <a
+                  href="/resume-id.pdf"
+                  download
+                  className="inline-flex min-h-11 items-center px-3 text-sm font-semibold text-ink transition-colors hover:bg-surface"
+                >
+                  {t.home.resumeIndonesian}
+                </a>
+              </div>
+            </details>
+            */}
           </div>
         </div>
         <aside
@@ -133,26 +70,26 @@ export default function Home({ language, t }) {
             <li className="break-all">
               <a
                 className="underline-offset-4 hover:underline"
-                href="mailto:yogiardiansyahn@gmail.com"
+                href={`mailto:${profile.email}`}
               >
-                yogiardiansyahn@gmail.com
+                {profile.email}
               </a>
             </li>
             <li className="break-all">
               <a
                 lang="en"
                 className="underline-offset-4 hover:underline"
-                href="https://github.com/Yogi-ArdiansyahN"
+                href={profile.github}
               >
-                github.com/Yogi-ArdiansyahN
+                {profile.githubLabel}
               </a>
             </li>
             <li className="break-all">
               <a
                 className="underline-offset-4 hover:underline"
-                href="https://instagram.com/yogiardnsyhn"
+                href={profile.instagram}
               >
-                @yogiardnsyhn
+                {profile.instagramLabel}
               </a>
             </li>
           </ul>

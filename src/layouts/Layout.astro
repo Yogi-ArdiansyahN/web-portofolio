@@ -1,27 +1,51 @@
 ---
 import "../styles/global.css";
 import { copy } from "../i18n.js";
+import { profile } from "../data/resume.js";
 
 const initial = copy.en;
 const {
   title = initial.home.documentTitle,
   description = initial.home.description,
   ogLocale = initial.ogLocale,
+  ogImageAlt = initial.ogImageAlt,
 } = Astro.props;
 
 const site = Astro.site ?? new URL("https://yogian.my.id");
 const canonical = new URL(Astro.url.pathname, site).toString();
 const socialImage = new URL("/assets/img/project/top-up-1.png", site).toString();
-const person = {
+const language = ogLocale === "id_ID" ? "id" : "en";
+const alternateLocale = language === "id" ? "en_US" : "id_ID";
+const structuredData = {
   "@context": "https://schema.org",
-  "@type": "Person",
-  name: "Yogi Ardiansyah Nugraha",
-  jobTitle: "Software Developer",
-  url: new URL("/", site).toString(),
-  email: "mailto:yogiardiansyahn@gmail.com",
-  sameAs: [
-    "https://github.com/Yogi-ArdiansyahN",
-    "https://instagram.com/yogiardnsyhn",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": `${site}#website`,
+      url: new URL("/", site).toString(),
+      name: profile.name,
+      inLanguage: language,
+      publisher: { "@id": `${site}#person` },
+    },
+    {
+      "@type": "Person",
+      "@id": `${site}#person`,
+      name: profile.name,
+      jobTitle: profile.role,
+      url: new URL("/", site).toString(),
+      email: profile.email,
+      sameAs: [profile.github, profile.instagram],
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${canonical}#webpage`,
+      url: canonical,
+      name: title,
+      description,
+      inLanguage: language,
+      isPartOf: { "@id": `${site}#website` },
+      about: { "@id": `${site}#person` },
+    },
   ],
 };
 ---
@@ -50,29 +74,30 @@ const person = {
           ?.setAttribute("content", theme === "dark" ? "#0B0B0B" : "#FFFFFF");
       })();
     </script>
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
     <link rel="canonical" href={canonical} />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Yogi Ardiansyah Nugraha" />
     <meta property="og:locale" content={ogLocale} />
+    <meta property="og:locale:alternate" content={alternateLocale} />
     <meta property="og:url" content={canonical} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={socialImage} />
+    <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1350" />
     <meta property="og:image:height" content="680" />
-    <meta property="og:image:alt" content="Top-up platform interface from a portfolio project" />
+    <meta property="og:image:alt" content={ogImageAlt} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={socialImage} />
-    <script type="application/ld+json" set:html={JSON.stringify(person)} />
+    <meta name="twitter:image:alt" content={ogImageAlt} />
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   </head>
   <body class="min-h-screen bg-canvas text-ink">
-    <main id="main-content" class="mx-auto w-full max-w-screen-lg flex-1 px-4 sm:px-6 lg:px-8">
-      <slot />
-    </main>
+    <slot />
     <footer class="mx-auto w-full max-w-screen-lg px-4 pb-8 sm:px-6 lg:px-8">
       <div class="mt-12 flex flex-col gap-2 border-t border-ink/20 pt-5 text-xs text-muted sm:flex-row sm:items-center sm:justify-between">
         <span class="font-bold text-ink">YOGIAN</span>

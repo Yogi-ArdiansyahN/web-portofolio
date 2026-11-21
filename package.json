@@ -14,12 +14,14 @@
     "@astrojs/sitemap": "^3.7.6",
     "@tailwindcss/vite": "^4.1.11",
     "astro": "^5.12.9",
+    "pdfkit": "^0.21.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "tailwindcss": "^4.1.11"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.6",
+    "@types/pdfkit": "^0.17.7",
     "typescript": "^5.9.3"
   }
 }
