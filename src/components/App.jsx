@@ -98,7 +98,7 @@ export default function App({ entries, page, pathname }) {
                     key={item.id}
                     href={item.href}
                     aria-current={active ? "page" : undefined}
-                    className={`inline-flex min-h-11 items-center rounded-sm px-3 text-sm font-semibold transition-colors ${
+                    className={`inline-flex min-h-11 items-center px-3 text-sm font-semibold transition-colors ${
                       active
                         ? "bg-ink text-canvas"
                         : "text-muted hover:bg-surface hover:text-ink"
@@ -114,7 +114,7 @@ export default function App({ entries, page, pathname }) {
               aria-label={t.language.switchTo}
               data-tooltip={t.language.switchTo}
               onClick={() => setLanguage(nextLanguage)}
-              className="icon-tooltip grid min-h-11 min-w-11 place-items-center rounded-sm border border-ink/50 text-ink transition-colors hover:border-ink hover:bg-surface"
+              className="icon-tooltip grid min-h-11 min-w-11 place-items-center border border-ink/50 text-ink transition-colors hover:border-ink hover:bg-surface"
             >
               {language === "id" ? (
                 <svg aria-hidden="true" viewBox="0 0 24 16" className="h-4 w-6">
@@ -151,7 +151,7 @@ export default function App({ entries, page, pathname }) {
               aria-label={themeLabel}
               data-tooltip={themeLabel}
               onClick={() => setTheme(nextTheme)}
-              className="icon-tooltip grid min-h-11 min-w-11 place-items-center rounded-sm border border-ink/50 text-ink transition-colors hover:border-ink hover:bg-surface"
+              className="icon-tooltip grid min-h-11 min-w-11 place-items-center border border-ink/50 text-ink transition-colors hover:border-ink hover:bg-surface"
             >
               {theme === "dark" ? (
                 <svg

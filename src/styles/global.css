@@ -29,6 +29,17 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+div,
+article,
+dialog,
+button,
+summary,
+a[href],
+li,
+span {
+  border-radius: 10px;
+}
+
 ::selection {
   background: var(--color-ink);
   color: var(--color-canvas);
@@ -59,7 +70,7 @@ summary {
   max-width: calc(100vw - 32px);
   padding: 6px 9px;
   border: 1px solid var(--color-ink);
-  border-radius: 4px;
+  border-radius: 10px;
   background: var(--color-canvas);
   color: var(--color-ink);
   font-size: 11px;
@@ -201,7 +212,7 @@ summary {
 }
 
 .journey-current {
-  border-radius: 4px;
+  border-radius: 10px;
   background: var(--color-ink);
   color: var(--color-canvas);
   padding: 6px 9px;
@@ -212,7 +223,7 @@ summary {
 
 .journey-available {
   border: 1px solid var(--color-ink);
-  border-radius: 4px;
+  border-radius: 10px;
   padding: 5px 9px;
   font-size: 11px;
   font-weight: 700;
